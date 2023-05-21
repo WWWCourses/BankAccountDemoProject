@@ -3,11 +3,15 @@ import bank_account.account as account
 
 from bank_account.constants import MENU_OPTIONS,LINE_WIDTH
 
-def show_main_menu():
+def show_header(prompt:str)->None:
 	# print menu header
+	print()
 	print('*'*LINE_WIDTH)
-	print(f'***{"Welcome to BankAccount Project":^{LINE_WIDTH-6}s}***')
+	print(f'***{f"{prompt}":^{LINE_WIDTH-6}s}***')
 	print('*'*LINE_WIDTH)
+
+def show_main_menu():
+	show_header('Welcome to BankAccount Project')
 	# print menu options
 	for idx,option in enumerate(MENU_OPTIONS):
 		print(f'*  {f"{idx+1}. {option}":<{LINE_WIDTH-4}s}*')
@@ -19,13 +23,17 @@ while True :
 	show_main_menu()
 	option = user.enter_option()
 
-	if option == 1 :
+	if option == '1' :
+		show_header('Create new account')
 		account.create_new()
-	elif option == 2 :
+	elif option == '2' :
+		show_header('Withdraw')
 		account.withdraw()
-	elif option == 3 :
+	elif option == '3' :
+		show_header('Deposit')
 		account.deposit()
-	elif option == 4 :
+	elif option == '4' :
+		show_header('Account Details')
 		account.show_details()
 	else : quit()
 

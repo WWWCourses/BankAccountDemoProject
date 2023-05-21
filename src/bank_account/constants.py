@@ -8,3 +8,5 @@ MENU_OPTIONS = [
 	"Show Account Details",
 	"Exit"
 ]
+
+CURRENCY='$'
