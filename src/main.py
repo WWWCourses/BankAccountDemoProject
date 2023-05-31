@@ -1,7 +1,6 @@
-import bank_account.user as user
-import bank_account.account as account
-
 from bank_account.constants import MENU_OPTIONS,LINE_WIDTH
+from bank_account.bank import Bank
+import bank_account.user as user
 
 def show_header(prompt:str)->None:
 	# print menu header
@@ -19,22 +18,23 @@ def show_main_menu():
 	print('*'*LINE_WIDTH)
 
 
+bank = Bank()
 while True :
 	show_main_menu()
 	option = user.enter_option()
 
 	if option == '1' :
 		show_header('Create new account')
-		account.create_new()
+		bank.create_new_account()
 	elif option == '2' :
 		show_header('Withdraw')
-		account.withdraw()
+		bank.withdraw()
 	elif option == '3' :
 		show_header('Deposit')
-		account.deposit()
+		bank.deposit()
 	elif option == '4' :
 		show_header('Account Details')
-		account.show_details()
+		bank.show_account_details()
 	else : quit()
 
 

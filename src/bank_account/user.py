@@ -79,10 +79,10 @@ def enter_pin()->str:
 	return get_input_in_range_as_str(prompt,min,max)
 
 def enter_account_id()->str:
-	""" Enter valid account number"""
+	""" Enter valid account id"""
 	min = '00'
 	max = '99'
-	prompt = f'Enter account number'
+	prompt = f'Enter account id'
 
 	return get_input_in_range_as_str(prompt,min,max)
 
