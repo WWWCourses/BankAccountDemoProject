@@ -18,7 +18,9 @@ def show_main_menu():
 	print('*'*LINE_WIDTH)
 
 
+# create new bank to operate on
 bank = Bank()
+
 while True :
 	show_main_menu()
 	option = user.enter_option()
