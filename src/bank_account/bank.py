@@ -12,14 +12,12 @@ class Bank:
 			exit(0)
 
 	def _get_last_id(self) -> str:
-		return self.accounts[-1]['id']
+		return db._get_last_id()
 
-	def _find_account(self, account_id: str) -> AccountDict | None:
-		for acc in self.accounts:
-			if acc['id'] == account_id:
-				return acc
 
-		return None
+	def _find_account(self, id: str) -> AccountDict | None:
+		account = db.find_account_by_id(id)
+		return account
 
 	def get_account(self)->AccountDict|None:
 		max_tries = 3
@@ -48,7 +46,7 @@ class Bank:
 			print(f"\nYour account is created. Remember your account ID:{id}")
 			account = Account(full_name=full_name, pin=pin, id=id)
 
-			self.accounts.append(account.convert_to_dict())
+			db.create_account(account.convert_to_dict())
 		else:
 			return None
 
@@ -76,4 +74,8 @@ class Bank:
 
 	def	show_account_details(self)->None:
 		print('show_account_details')
+
+	def	show_all_accounts(self)->None:
+		print('show_all_accounts')
+		print(db.show_all_accounts())
 

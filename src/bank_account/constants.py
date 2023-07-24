@@ -6,6 +6,7 @@ MENU_OPTIONS = [
 	"Withdraw Money",
 	"Deposit Money",
 	"Show Account Details",
+    "Show All Accounts",
 	"Exit"
 ]
 

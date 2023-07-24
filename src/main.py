@@ -37,6 +37,9 @@ while True :
 	elif option == '4' :
 		show_header('Account Details')
 		bank.show_account_details()
+	elif option == '5' :
+		show_header('Show All Accounts')
+		bank.show_all_accounts()
 	else : quit()
 
 
